@@ -35,7 +35,7 @@ myweatherbot/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/myweatherbot.git
+git clone https://github.com/UdaniNavaratne/myweatherbot.git
 cd myweatherbot
 
 # 2. Create a virtual environment
