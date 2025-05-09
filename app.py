@@ -13,6 +13,7 @@ weather_handler = WeatherData()
 def index():
     return "Web app with python flask"
 
+#def index
 @app.route('/webhook', methods=['POST'])
 @cross_origin()
 def webhook():

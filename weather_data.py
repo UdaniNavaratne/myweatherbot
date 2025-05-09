@@ -3,7 +3,7 @@ from app_exception.exception import AppException
 import pyowm
 import sys
 
-
+#Weather_data.py
 class WeatherData:
     def __init__(self):
         self.owmapikey='fd9706b192f3a51cc627504afa900c05'

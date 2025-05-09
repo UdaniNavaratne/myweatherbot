@@ -1,4 +1,0 @@
-[2025-05-06 20:58:16,285] werkzeug - WARNING -  * Debugger is active!
-[2025-05-06 20:58:16,301] werkzeug - INFO -  * Debugger PIN: 113-679-550
-[2025-05-06 20:58:18,473] werkzeug - INFO - 127.0.0.1 - - [06/May/2025 20:58:18] "[35m[1mPOST /webhook HTTP/1.1[0m" 500 -
-[2025-05-06 20:59:10,157] werkzeug - INFO -  * Detected change in 'F:\\myweatherbot\\weather_data.py', reloading

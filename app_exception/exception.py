@@ -45,3 +45,4 @@ class AppException(Exception):
         Formating how a object should be visible if used in print statement.
         """
         return self.error_message
+#exeption
