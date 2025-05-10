@@ -16,6 +16,7 @@ class WeatherData:
     def processRequest(self,req):
         
         try:
+            print("⚙️ Starting weather request handling...")
             self.result = req.get("queryResult", {})
             self.parameters = self.result.get("parameters", {})
 
