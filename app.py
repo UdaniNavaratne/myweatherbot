@@ -41,6 +41,11 @@ def webhook():
             "fulfillmentText": "Internal Server Error: Something went wrong."
         }), 500)
 
+
+@app.route('/webhook', methods=['GET'])
+def webhook_get():
+    return "Use POST method to access this endpoint.", 405
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
