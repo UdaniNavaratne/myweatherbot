@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
-#Trying out weather app
+
 # ✅ Instantiate handler globally
 weather_handler = WeatherData()
 
