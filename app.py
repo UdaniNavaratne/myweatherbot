@@ -21,12 +21,30 @@ def webhook():
         req = request.get_json(silent=True, force=True)
         print("📦 Request JSON:", json.dumps(req, indent=2))
 
-        if not req or "queryResult" not in req or "parameters" not in req["queryResult"] or "city_name" not in req["queryResult"]["parameters"]:
+        # Try to get city from main parameters
+        city = req.get("queryResult", {}).get("parameters", {}).get("city_name")
+
+        # If not found, try alternativeQueryResults
+        if not city:
+            alt_results = req.get("alternativeQueryResults", [])
+            if alt_results:
+                city = alt_results[0].get("parameters", {}).get("city_name")
+
+        if not city:
             return make_response(json.dumps({
                 "fulfillmentText": "Invalid request. Please provide a valid city name."
             }), 400)
 
-        res = weather_handler.processRequest(req)
+        # Inject the found city into a format weather_handler expects
+        clean_req = {
+            "queryResult": {
+                "parameters": {
+                    "city_name": city
+                }
+            }
+        }
+
+        res = weather_handler.processRequest(clean_req)
 
         res = json.dumps(res)
         r = make_response(res)
